@@ -83,24 +83,24 @@ a {
   text-decoration: none;
   color: #000; }
 
-#portfolio_list {
+#works {
   overflow: hidden;
   text-align: center; }
 
-#portfolio_list li {
+#works li {
   float: left;
   width: 50%;
   margin-bottom: 50px;
   letter-spacing: -1px; }
 
-#portfolio_list li img {
+#works li img {
   width: 85%; }
 
-#portfolio_list li h1 {
+#works li h1 {
   font-size: 16px;
   color: #888; }
 
-#portfolio_list li p {
+#works li p {
   font-size: 14px; }
 
 /*------------------- profile -----------------------*/
@@ -131,7 +131,7 @@ footer p {
 
 /*------------------- responsive -----------------------*/
 @media (max-width: 768px) {
-  #portfolio_list li {
+  #works li {
     width: 100%; }
   section {
     padding: 80px 20px 0px; } }

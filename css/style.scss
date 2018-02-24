@@ -93,7 +93,7 @@ a{
   color: #000;
 }
 
-#portfolio_list{
+#works{
   overflow: hidden;
   text-align: center;
   li{
@@ -145,7 +145,7 @@ footer{
 
 /*------------------- responsive -----------------------*/
 @media (max-width: 768px) {
-  #portfolio_list{
+  #works{
     li {
       width: 100%;
     }

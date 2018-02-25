@@ -17,13 +17,15 @@
     </div>
 </header>
 <section class="wrapper">
-    <div id="works">
-        <template v-for="work in works">
-            <div v-for="content in work">
-                {{content}}
+    <ul id="works">
+        <li v-for="work in works">
+            <img v-bind:src="work.img"/>
+            <h1>{{work.title}}</h1>
+            <div v-for="content in work.detail">
+                <p>{{content}}</p>
             </div>
-        </template>
-    </div>
+        </li>
+    </ul>
 </section>
 <footer>
     <div class="wrapper">
@@ -40,16 +42,104 @@
         data:{
           works: [
               {
+                  title:'육일목재',
+                  img:'img/yukil.png',
                   detail: [
-                      'img/yukil.png',
-                      '61timber.com',
                       '기업소개 및 제품 카탈로그 페이지',
                       '2017. 9.',
-                      '2명',
                       'HTML / PHP / JavaScript',
-                      'PHPStorm, HeidiSQL',
                       '사용자 페이지(웹/모바일) 디자인 및 Front-End 개발'
                       ]
+              },
+              {
+                  title:'렌고',
+                  img:'img/rengo.png',
+                  detail: [
+                      '렌터카 중개 플랫폼',
+                      '2017. 9.',
+                      'HTML / PHP / JavaScript',
+                      '사용자 페이지(웹/모바일) 디자인 및 Front-End 개발'
+                  ]
+              },
+              {
+                  title: '삼보토건',
+                  img: 'img/sambo.png',
+                  detail: [
+                      '기업 홍보 홈페이지',
+                      '2017. 3.',
+                      'HTML / CSS / JavaScript',
+                      '사용자 페이지(웹/모바일) 퍼블리싱'
+                  ]
+              },
+              {
+                  title: '단골도서',
+                  img: 'img/dangoll.png',
+                  detail: [
+                      '도서 판매 쇼핑몰',
+                      '2016. 12.',
+                      'HTML / PHP(CodeIgniter) / JavaScript / MYSQL',
+                      '사용자(웹/모바일),관리자 페이지 Front-End, Back-End 개발'
+                  ]
+              },
+              {
+                  title: '고시마트',
+                  img: 'img/gosimart.png',
+                  detail: [
+                      '수험관련 컨텐츠 쇼핑몰',
+                      '2016. 10.',
+                      'HTML / PHP(CodeIgniter) / JavaScript / MYSQL',
+                      '사용자(웹), 관리자 페이지 Front-End, Back-End 개발'
+                  ]
+              },
+              {
+                  title: '(주)원미디어 웹사이트',
+                  img: 'img/onemedia.png',
+                  detail: [
+                      '기업 홍보, 포트폴리오',
+                      '2015. 6.',
+                      'HTML, PHP(WordPress), CSS ',
+                      '포트폴리오, 채용안내 페이지 코딩'
+                  ]
+              },
+              {
+                  title: '태아보험 상담',
+                  img: 'img/iinsu.png',
+                  detail: [
+                      '상담이벤트를 이용한 고객유치',
+                      '2015. 5.',
+                      'HTML / PHP(GNU Board) / jQuery',
+                      'animated image, CMS'
+                  ]
+              },
+              {
+                  title: '(주)한국DNA밸리',
+                  img: 'img/dna.png',
+                  detail: [
+                      '기업 및 사업분야 소개',
+                      '2015. 4.',
+                      'HTML / PHP(WordPress) / jQuery',
+                      'Slider Image, Customized CSS, Graphic, Table'
+                  ]
+              },
+              {
+                  title: '(주)에버스톤 웹사이트',
+                  img: 'img/evst.png',
+                  detail: [
+                      '기업 소개, 홍보',
+                      '2015. 4.',
+                      'HTML / PHP / jQuery',
+                      '전체내용 구성 및 기획, SNS메일발송, 디자인, 퍼블리싱'
+                  ]
+              },
+              {
+                  title: '(주)허브동산 웹사이트',
+                  img: 'img/herb.png',
+                  detail: [
+                      '기업 정보 및 공법 소개, 홍보',
+                      '2011. 10.',
+                      'HTML, CSS, JavaScript, Flash',
+                      '내용 구성 및 기획, 2D 및 3D 모델링 등 디자인, 퍼블리싱'
+                  ]
               }
           ]
         }

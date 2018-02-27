@@ -28,18 +28,12 @@
         </li>
     </ul>
 </section>
-<div id="example">
-    <my-component></my-component>
-</div>
 <footer>
-    <div class="wrapper">
-        <p>
-            (c)copyright 2018 by Bae Myoung-Jin
-        </p>
-    </div>
+    <footer-component></footer-component>
 </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="./js/component.js"></script>
 <script>
     var works = new Vue({
         el: '#works',
@@ -147,16 +141,6 @@
               }
           ]
         }
-    })
-
-    // 등록
-    Vue.component('my-component', {
-        template: '<div>(c)copyright 2018 by Bae Myoung-Jin</div>'
-    })
-
-    // 루트 인스턴스 생성
-    new Vue({
-        el: '#example'
     })
 </script>
 </html>

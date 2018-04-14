@@ -54,7 +54,7 @@ a:hover {
   color: crimson; }
 
 section {
-  padding-top: 80px; }
+  padding: 80px 20px 0px; }
 
 /*------------------- header -----------------------*/
 header {
@@ -132,6 +132,4 @@ footer p {
 /*------------------- responsive -----------------------*/
 @media (max-width: 768px) {
   #works li {
-    width: 100%; }
-  section {
-    padding: 80px 20px 0px; } }
+    width: 100%; } }

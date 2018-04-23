@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 <body naver_screen_capture_injected="true">
+<div id="cover"></div>    
 <header>
     <div class="wrapper">
         <ul>
@@ -142,5 +143,11 @@
           ]
         }
     })
+    setTimeout(
+        function(){
+            const cover = document.getElementById('cover');
+            cover.remove();
+        }, 2000
+    )
 </script>
 </html>

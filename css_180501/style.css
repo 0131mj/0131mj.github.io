@@ -79,19 +79,15 @@ header {
   line-height: 20px;
   padding: 30px 0px;
   background: rgba(255, 255, 255, 0.9); }
-
-header ul {
-  float: right; }
-
-header ul li {
-  float: left;
-  margin-right: 20px; }
-
-header ul li.on a {
-  color: #000; }
-
-header ul li a {
-  color: #888; }
+  header ul {
+    float: right; }
+    header ul li {
+      float: left;
+      margin-right: 20px; }
+      header ul li.on a {
+        color: #000; }
+      header ul li a {
+        color: #888; }
 
 /*------------------- portfolio -----------------------*/
 a {
@@ -100,42 +96,30 @@ a {
 
 #works {
   overflow: hidden;
-  text-align: left; }
-
-#works li {
-  float: left;
-  width: 100%;
-  margin-bottom: 50px;
-  letter-spacing: -1px; }
-
-#works li img {
-  display: none;
-  float: left;
-  width: 40%;
-  margin-right: 50px;
-  margin-left: 200px; }
-
-#works li h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 28px;
-  color: #888; }
-
-#works li p {
-  font-size: 14px; }
+  text-align: center; }
+  #works li {
+    float: left;
+    width: 50%;
+    margin-bottom: 50px;
+    letter-spacing: -1px; }
+    #works li img {
+      width: 85%; }
+    #works li h1 {
+      font-size: 16px;
+      color: #888; }
+    #works li p {
+      font-size: 14px; }
 
 /*------------------- profile -----------------------*/
 article {
   margin-bottom: 50px; }
-
-article h2 {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #888; }
-
-article .year {
-  font-size: 14px;
-  color: #aaa; }
+  article h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #888; }
+  article .year {
+    font-size: 14px;
+    color: #aaa; }
 
 ul {
   clear: both;
@@ -145,10 +129,9 @@ ul {
 /*------------------- footer -----------------------*/
 footer {
   margin: 30px 0; }
-
-footer p {
-  text-align: right;
-  margin-right: 20px; }
+  footer p {
+    text-align: right;
+    margin-right: 20px; }
 
 /*------------------- responsive -----------------------*/
 @media (max-width: 768px) {

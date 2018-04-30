@@ -112,17 +112,23 @@ a{
 
 #works{
   overflow: hidden;
-  text-align: center;
+  text-align: left;
   li{
     float: left;
-    width:50%;
+    width:100%;
     margin-bottom:50px;
     letter-spacing: -1px;
     img{
-      width:85%;
+      display: none;
+      float:left;
+      width:40%;
+      margin-right:50px;
+      margin-left: 200px;
     }
     h1{
-      font-size:16px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size:28px;
       color:#888;
     }
     p{
@@ -167,5 +173,4 @@ footer{
       width: 100%;
     }
   }
-
 }

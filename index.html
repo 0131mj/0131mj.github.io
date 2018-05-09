@@ -22,9 +22,9 @@
     <ul id="works">
         <li v-for="work in works">
             <img v-bind:src="work.img"/>
-            <h1>{{work.title}}</h1>
-            <div v-for="content in work.detail">
-                <p>{{content}}</p>
+            <div class="description">
+                <h1>{{work.title}}</h1>
+                <p v-for="content in work.detail">{{content}}</p>
             </div>
         </li>
     </ul>

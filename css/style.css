@@ -119,13 +119,13 @@ a {
   overflow: hidden;
   margin-top: 10px; }
 
-#works li h1 {
+#works li .description h1 {
   margin-top: 20px;
   margin-bottom: 10px;
   font-size: 28px;
   color: #888; }
 
-#works li p {
+#works li .description p {
   font-size: 14px; }
 
 /*------------------- profile -----------------------*/
@@ -170,6 +170,9 @@ footer p {
     display: block;
     width: 100%;
     max-width: 614px;
+    margin: 0 auto; }
+  #works li .description {
+    width: 40%;
     margin: 0 auto; }
   #profile {
     padding-left: 20px; } }

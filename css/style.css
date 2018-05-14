@@ -162,7 +162,7 @@ footer p {
   margin-right: 20px; }
 
 /*------------------- responsive -----------------------*/
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   #works li {
     width: 100%; }
   #works li img {
@@ -172,7 +172,10 @@ footer p {
     max-width: 614px;
     margin: 0 auto; }
   #works li .description {
-    width: 40%;
-    margin: 0 auto; }
+    clear: both;
+    float: none;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; }
   #profile {
     padding-left: 20px; } }

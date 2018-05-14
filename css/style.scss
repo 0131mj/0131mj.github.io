@@ -178,7 +178,7 @@ footer{
 }
 
 /*------------------- responsive -----------------------*/
-@media (max-width: 768px) {
+@media (max-width:1080px) {
   #works{
     li {
       width: 100%;
@@ -190,8 +190,11 @@ footer{
         margin: 0 auto;
       }
       .description{
-        width:40%;
+        clear:both;
+        float:none;
+        width:100%;
         margin: 0 auto;
+        text-align: center;
       }
     }
   }

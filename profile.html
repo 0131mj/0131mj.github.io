@@ -21,28 +21,27 @@
     <article>
         <h2>배 명 진</h2>
         <ul>
-            <li>Web Developer</li>
-            <li><a href="https://github.com/0131mj" target="_blank">https://github.com/0131mj</a></li>
-            <li>0131mj@gmail.com</li>
-            <li>010-6657-9302</li>
+            <li>- Front-End Developer</li>
+            <li>- Web, Mobile App Designer</li>
+            <li>- <a href="https://github.com/0131mj" target="_blank">https://github.com/0131mj</a></li>
+            <li>- 0131mj@gmail.com</li>
         </ul>
     </article>
-    <article>
+    <article id="skills">
         <h2>Skills</h2>
-        <ul id="skills">
-            <template v-for="skill in skills">
-                <li>{{skill}}</li>
-            </template>
-        </ul>
+        <template v-for="list in skills">
+            <h3 class="year">{{list.area}}</h3>
+            <ul>
+                <li v-for="content in list.skill">- {{content}}</li>
+            </ul>
+        </template>
     </article>
     <article id="career">
         <h2>Career</h2>
         <template v-for="list in careers">
             <h3 class="year">{{list.year}}</h3>
             <ul>
-                <li v-for="content in list.career">
-                    {{content}}
-                </li>
+                <li v-for="content in list.career">- {{content}}</li>
             </ul>
         </template>
     </article>
@@ -51,9 +50,7 @@
         <template v-for="list in projects">
             <h3 class="year">{{list.year}}</h3>
             <ul>
-                <li v-for="content in list.project">
-                    {{content}}
-                </li>
+                <li v-for="content in list.project">- {{content}}</li>
             </ul>
         </template>
     </article>
@@ -69,13 +66,32 @@
         el: '#skills',
         data: {
             skills: [
-                'HTML5/CSS(SCSS)',
-                'JavaScript',
-                'jQuery',
-                'PHP(Native PHP, Codeigniter Framework)',
-                'MySQL',
-                '2D Graphic(Sketch, Illustrator, Photoshop, CAD)',
-                '3D Graphic(Rhinoceros, Keyshot)'
+                {
+                    area: "Front-End",
+                    skill: [
+                        'HTML5',
+                        'CSS3 (SCSS)',
+                        'JavaScript (Vanilla, ReactJS, jQuery..., etc)',
+                        'PHP (Native PHP, Codeigniter)',
+                        'SQL (MySQL)'
+                    ]
+                },
+                {
+                    area: "Web / App Design ",
+                    skill: [
+                        'Sketch',
+                        'Illustrator',
+                        'Photoshop'
+                    ]
+                },
+                {
+                    area: "etc",
+                    skill: [
+                        'AutoCAD',
+                        'OA (Excel, PowerPoint, 한글)',
+                        '3D graphics (Rhinoceros & KeyShot)'
+                    ]
+                }
             ]
         }
     })
@@ -95,14 +111,14 @@
                     year:'2016. 5. ~ 2017. 2.',
                     career : [
                         '(주)캠버스 개발팀 주임',
-                        '캠버스 및 패밀리 사이트(고시마트, 단골도서)개발'
+                        '캠버스 및 패밀리 사이트(고시마트, 단골도서) 개발'
                     ]
                 },
                 {
                     year:'2015. 7. ~ 2016. 4.',
                     career : [
                         '쿠키(COOKIE)기획팀 팀장',
-                        '사이트 유지보수 개발, 배너 디자인, 신규 플랫폼 기획'
+                        '사이트 유지보수, 배너 디자인, 신규 플랫폼 기획'
                     ]
                 },
                 {
@@ -123,26 +139,26 @@
                 {
                     year:'2017',
                     project : [
-                    '렌터카 예약 중개 플랫폼 - (주)렌고 PC, Mobile 기획 디자인 개발 ',
-                    '토목공사 전문업체 - 삼보토건(주) 웹사이트 개발',
-                    '건축자재 전문업체 - 육일목재/미가건축 기업소개 및 카탈로그 웹사이트 디자인 및 개발']
+                    '렌터카 예약 중개 플랫폼 : (주)렌고 PC 개발, Mobile App 기획 디자인',
+                    '토목공사 전문업체 : 삼보토건(주) 웹사이트 개발',
+                    '건축자재 전문업체 : 육일목재/미가건축 기업소개 및 카탈로그 웹사이트 디자인 및 개발']
                 },
                 {
                     year:'2016',
                     project : [
-                    '교육컨텐츠 쇼핑몰 - 뉴고시마트 배송관리 프로그램 기획, 개발',
-                    '교육컨텐츠 쇼핑몰 - 고시마트(Admin/User) PC, Mobile 개발',
-                    '도서판매 쇼핑몰 - 단골도서(Admin/User) PC, Mobile 개발',
-                    '(주)캠버스 - 도서매입 프로그램 개발',
-                    '(주)캠버스 패밀리사이트 - 전태련, 정샘, 캠버스학원 등 유지보수']
+                    '교육컨텐츠 쇼핑몰 : 뉴고시마트 배송관리 프로그램 기획, 개발',
+                    '교육컨텐츠 쇼핑몰 : 고시마트(Admin/User) PC, Mobile 개발',
+                    '도서판매 쇼핑몰 : 단골도서(Admin/User) PC, Mobile 개발',
+                    '(주)캠버스 : 도서매입 프로그램 개발',
+                    '(주)캠버스 패밀리사이트 : 전태련, 정샘, 캠버스학원 등 유지보수']
                 },
                 {
                     year:'2015',
                     project : [
-                    'IT전문기업 - (주)에버스톤 기업 웹사이트 기획, 디자인 및 개발',
+                    'IT전문기업 : (주)에버스톤 기업 웹사이트 기획, 디자인 및 개발',
                     '태아보험 이벤트 광고페이지 개발',
-                    '영상제작 전문업체 - 원미디어 기업 웹사이트 개발',
-                    '생명공학 전문업체 - 한국DNA밸리 기업 웹사이트) 개발',]
+                    '영상제작 전문업체 : 원미디어 기업 웹사이트 개발',
+                    '생명공학 전문업체 : 한국DNA밸리 기업 웹사이트) 개발',]
                 }
            ]
         }

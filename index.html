@@ -14,7 +14,7 @@
             text-align: center;
         }
 
-        #works{
+        #works {
             padding: 10vh 0;
         }
 
@@ -27,6 +27,28 @@
 
         #works li a:hover {
             background-color: #fafafa;
+        }
+
+        #iframe-wrapper {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 100px;
+            z-index: 1;
+            background-color: #fff;
+        }
+
+        #iframe-wrapper.show {
+            display: block;
+        }
+
+        #close-iframe-btn {
+            position: fixed;
+            z-index: 3;
+            left: calc(50vw - 15px);
+            width: 30px;
+            height: 30px;
+            top: 10px;
         }
     </style>
 </head>
@@ -42,10 +64,17 @@
 </header>
 <section class="wrapper">
     <ul id="works">
-        <li><a href="https://0131mj.github.io/games/MineSweeper/index.html" target="_blank">💣 지뢰 찾기</a></li>
-        <li><a href="https://0131mj.github.io/baseball_game_ex/index.html" target="_blank">⚾ 숫자 야구게임</a></li>
+
+        <li><a href="#mindsweeper" data-item="mindsweeper"
+               data-url="https://0131mj.github.io/games/MineSweeper/index.html">💣 지뢰 찾기</a></li>
+        <li><a href="#baseball" data-item="baseball" data-url="https://0131mj.github.io/baseball_game_ex/index.html">⚾
+            숫자 야구게임</a></li>
     </ul>
 </section>
+<div id="iframe-wrapper" style="">
+    <button id="close-iframe-btn">X</button>
+    <iframe id="iframe" frameborder="0"></iframe>
+</div>
 <footer>
     <footer-component></footer-component>
 </footer>
@@ -53,12 +82,46 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="./js/component.js"></script>
 <script>
-
     setTimeout(
         function () {
             const cover = document.getElementById('cover');
             cover.remove();
         }, 2000
-    )
+    );
+
+    const iframe = document.getElementById("iframe");
+    const iframeWrapper = document.getElementById("iframe-wrapper");
+    const closeIframeBtn = document.getElementById("close-iframe-btn");
+
+    const hideIframe = () => {
+        iframeWrapper.classList.remove("show");
+        iframe.setAttribute("src", "");
+    };
+
+
+    function removeHash() {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+        hideIframe();
+    }
+
+    closeIframeBtn.addEventListener("click", () => {
+        removeHash();
+    });
+
+
+    window.addEventListener('hashchange', function () {
+        const itemId = location.hash.slice(1);
+        if (itemId) {
+            const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
+            const url = target.getAttribute("data-url");
+//            console.log('location changed!', itemId, url);
+            iframe.setAttribute("src", url);
+            iframe.setAttribute("width", `${window.innerWidth}px`);
+            iframe.setAttribute("height", `${window.innerHeight - 100}px`);
+            iframeWrapper.classList.add("show")
+        } else {
+            hideIframe();
+        }
+    })
 </script>
 </html>

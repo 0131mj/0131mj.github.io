@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/style.css">
     <style>
+        body{
+            background-color: lightblue;
+        }
         #works {
             display: flex;
-            flex-direction: column;
             align-items: center;
             text-align: center;
         }
@@ -19,21 +21,38 @@
         }
 
         #works li a {
-            padding: 10vh 0;
-            font-size: 2.4rem;
-            font-weight: bold;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        #works li a:hover {
+        #works li a div{
+            font-size: 5vh;
+            font-weight: bold;
+            height: 10vh;
+            width: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            background: #fff;
+        }
+
+
+        #works li a div:hover {
             background-color: #fafafa;
         }
+
+
+
 
         #iframe-wrapper {
             display: none;
             position: fixed;
             left: 0;
-            top: 100px;
+            top: 80px;
             z-index: 1;
             background-color: #fff;
         }
@@ -64,11 +83,18 @@
 </header>
 <section class="wrapper">
     <ul id="works">
-
-        <li><a href="#mindsweeper" data-item="mindsweeper"
-               data-url="https://0131mj.github.io/games/MineSweeper/index.html">💣 지뢰 찾기</a></li>
-        <li><a href="#baseball" data-item="baseball" data-url="https://0131mj.github.io/baseball_game_ex/index.html">⚾
-            숫자 야구게임</a></li>
+        <li>
+            <a href="#mindsweeper" data-item="mindsweeper" data-url="https://0131mj.github.io/games/MineSweeper/index.html">
+                <div>💣</div>
+                Mind Sweeper
+            </a>
+        </li>
+        <li>
+            <a href="#baseball" data-item="baseball" data-url="https://0131mj.github.io/baseball_game_ex/index.html">
+                <div>⚾</div>
+                Number Baseball
+            </a>
+        </li>
     </ul>
 </section>
 <div id="iframe-wrapper" style="">

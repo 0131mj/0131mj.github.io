@@ -5,71 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <style>
-        body{
-            background-color: lightblue;
-        }
-        #works {
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        #works {
-            padding: 10vh 0;
-        }
-
-        #works li a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #works li a div{
-            font-size: 5vh;
-            font-weight: bold;
-            height: 10vh;
-            width: 10vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            margin-bottom: 4px;
-            background: #fff;
-        }
-
-
-        #works li a div:hover {
-            background-color: #fafafa;
-        }
-
-
-
-
-        #iframe-wrapper {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 80px;
-            z-index: 1;
-            background-color: #fff;
-        }
-
-        #iframe-wrapper.show {
-            display: block;
-        }
-
-        #close-iframe-btn {
-            position: fixed;
-            z-index: 3;
-            left: calc(50vw - 15px);
-            width: 30px;
-            height: 30px;
-            top: 10px;
-        }
-    </style>
 </head>
 <body naver_screen_capture_injected="true">
 <div id="cover"></div>
@@ -84,14 +21,21 @@
 <section class="wrapper">
     <ul id="works">
         <li>
-            <a href="#mindsweeper" data-item="mindsweeper" data-url="https://0131mj.github.io/games/MineSweeper/index.html">
-                <div>💣</div>
+            <a href="#mindsweeper">
+                <div
+                    id="mind-sweeper"
+                    class="launcher"
+                    data-item="mindsweeper"
+                    data-url="https://0131mj.github.io/games/MineSweeper/index.html">💣
+                </div>
                 Mind Sweeper
             </a>
         </li>
         <li>
-            <a href="#baseball" data-item="baseball" data-url="https://0131mj.github.io/baseball_game_ex/index.html">
-                <div>⚾</div>
+            <a href="#baseball">
+                <div class="launcher"
+                     data-item="baseball"
+                     data-url="https://0131mj.github.io/baseball_game_ex/index.html">⚾</div>
                 Number Baseball
             </a>
         </li>
@@ -101,12 +45,8 @@
     <button id="close-iframe-btn">X</button>
     <iframe id="iframe" frameborder="0"></iframe>
 </div>
-<footer>
-    <footer-component></footer-component>
-</footer>
+<footer></footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="./js/component.js"></script>
 <script>
     setTimeout(
         function () {
@@ -139,12 +79,12 @@
         const itemId = location.hash.slice(1);
         if (itemId) {
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
-            const url = target.getAttribute("data-url");
-//            console.log('location changed!', itemId, url);
-            iframe.setAttribute("src", url);
-            iframe.setAttribute("width", `${window.innerWidth}px`);
-            iframe.setAttribute("height", `${window.innerHeight - 100}px`);
-            iframeWrapper.classList.add("show")
+            target.classList.add("opened")
+//            const url = target.getAttribute("data-url");
+//            iframe.setAttribute("src", url);
+//            iframe.setAttribute("width", `${window.innerWidth}px`);
+//            iframe.setAttribute("height", `${window.innerHeight - 100}px`);
+//            iframeWrapper.classList.add("show")
         } else {
             hideIframe();
         }

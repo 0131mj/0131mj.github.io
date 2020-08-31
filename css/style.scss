@@ -1,103 +1,56 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-body {
-  line-height: 1.5;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 /*------------------- common -----------------------*/
-#cover{
+#cover {
   position: fixed;
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   z-index: 10000;
   animation: fadeOut 2s;
   animation-delay: 0.3s;
 }
 
-@keyframes fadeOut{
-  0%{
+@keyframes fadeOut {
+  0% {
     opacity: 1;
   }
-  100%{
+  100% {
     opacity: 0;
   }
 }
-.wrapper{
+
+.wrapper {
   margin: 0 auto;
-  max-width:1200px;
+  max-width: 1200px;
 }
 
-a:hover{
-    color:crimson;
+a:hover {
+  color: crimson;
 }
 
-section{
+section {
   padding: 80px 30px 0px;
 }
+
 /*------------------- header -----------------------*/
-header{
-  width:100%;
+header {
+  width: 100%;
   position: fixed;
-  height:20px;
-  line-height:20px;
-  padding:30px 0px;
-  background: rgba(255,255,255,0.9);
-  ul{
-    float:right;
-    li{
-      float:left;
-      margin-right:20px;
-      &.on{
-        a{
-          color:#000;
+  height: 20px;
+  line-height: 20px;
+  padding: 30px 0px;
+  background: rgba(255, 255, 255, 0.9);
+  ul {
+    float: right;
+    li {
+      float: left;
+      margin-right: 20px;
+      &.on {
+        a {
+          color: #000;
         }
       }
-      a{
-        color:#888;
+      a {
+        color: #888;
       }
     }
   }
@@ -105,100 +58,170 @@ header{
 
 /*------------------- portfolio -----------------------*/
 
-a{
+a {
   text-decoration: none;
   color: #000;
 }
 
-#works{
+#works {
   overflow: hidden;
   text-align: left;
-  li{
+  li {
     float: left;
-    width:100%;
-    margin-bottom:50px;
+    width: 100%;
+    margin-bottom: 50px;
     letter-spacing: -1px;
-    img{
-      float:left;
-      width:40%;
-      margin-right:50px;
+    img {
+      float: left;
+      width: 40%;
+      margin-right: 50px;
       margin-left: 200px;
     }
-    .description{
-      float:left;
+    .description {
+      float: left;
       overflow: hidden;
       margin-top: 10px;
-      h1{
+      h1 {
         margin-top: 20px;
         margin-bottom: 10px;
-        font-size:28px;
-        color:#888;
+        font-size: 28px;
+        color: #888;
       }
-      p{
-        font-size:14px;
+      p {
+        font-size: 14px;
       }
     }
   }
 }
 
 /*------------------- profile -----------------------*/
-#profile{
-  padding-top:150px;
-  padding-left:30%;
+#profile {
+  padding-top: 150px;
+  padding-left: 30%;
 }
-article{
-  margin-bottom:50px;
-  h2{
-    font-size:28px;
-    margin-bottom:20px;
-    color:#888;
+
+article {
+  margin-bottom: 50px;
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #888;
   }
-  .year{
-    font-size:14px;
-    color:#aaa;
+  .year {
+    font-size: 14px;
+    color: #aaa;
   }
-  a{
+  a {
     text-decoration: underline;
   }
 }
-ul{
-  clear:both;
+
+ul {
+  clear: both;
   overflow: hidden;
   margin-bottom: 20px
 }
 
 /*------------------- footer -----------------------*/
 
-footer{
+footer {
   margin: 30px 0;
-  p{
+  p {
     text-align: right;
-    margin-right:20px;
+    margin-right: 20px;
   }
 }
 
 /*------------------- responsive -----------------------*/
-@media (max-width:1080px) {
-  #works{
+@media (max-width: 1080px) {
+  #works {
     li {
       width: 100%;
-      img{
-        float:none;
+      img {
+        float: none;
         display: block;
-        width:100%;
+        width: 100%;
         max-width: 614px;
         margin: 0 auto;
       }
-      .description{
-        clear:both;
-        float:none;
-        width:100%;
+      .description {
+        clear: both;
+        float: none;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
       }
     }
   }
-  #profile{
-    padding-left:20px;
+  #profile {
+    padding-left: 20px;
   }
+}
+
+#works {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10vh 0;
+  li {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .launcher {
+        font-size: 5vh;
+        font-weight: bold;
+        height: 10vh;
+        width: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        margin-bottom: 4px;
+        background: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        &#mind-sweeper{
+          transform: translate(100px, 100px);
+          &.opened {
+            transform: translate(0, 0);
+            font-size: 10rem;
+            width: 100vw;
+            height: 100vh;
+          }
+        }
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}
+
+#iframe-wrapper {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  z-index: 1;
+  background-color: #fff;
+  &.show {
+    display: block;
+  }
+}
+
+#close-iframe-btn {
+  position: fixed;
+  z-index: 3;
+  left: calc(50vw - 15px);
+  width: 30px;
+  height: 30px;
+  top: 10px;
+}
+
+.launcher {
+  transition: all 0.5s;
+
 }

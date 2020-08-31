@@ -1,50 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body {
-  line-height: 1.5; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
 /*------------------- common -----------------------*/
 #cover {
   position: fixed;
@@ -79,19 +32,15 @@ header {
   line-height: 20px;
   padding: 30px 0px;
   background: rgba(255, 255, 255, 0.9); }
-
-header ul {
-  float: right; }
-
-header ul li {
-  float: left;
-  margin-right: 20px; }
-
-header ul li.on a {
-  color: #000; }
-
-header ul li a {
-  color: #888; }
+  header ul {
+    float: right; }
+    header ul li {
+      float: left;
+      margin-right: 20px; }
+      header ul li.on a {
+        color: #000; }
+      header ul li a {
+        color: #888; }
 
 /*------------------- portfolio -----------------------*/
 a {
@@ -101,32 +50,27 @@ a {
 #works {
   overflow: hidden;
   text-align: left; }
-
-#works li {
-  float: left;
-  width: 100%;
-  margin-bottom: 50px;
-  letter-spacing: -1px; }
-
-#works li img {
-  float: left;
-  width: 40%;
-  margin-right: 50px;
-  margin-left: 200px; }
-
-#works li .description {
-  float: left;
-  overflow: hidden;
-  margin-top: 10px; }
-
-#works li .description h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 28px;
-  color: #888; }
-
-#works li .description p {
-  font-size: 14px; }
+  #works li {
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+    letter-spacing: -1px; }
+    #works li img {
+      float: left;
+      width: 40%;
+      margin-right: 50px;
+      margin-left: 200px; }
+    #works li .description {
+      float: left;
+      overflow: hidden;
+      margin-top: 10px; }
+      #works li .description h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 28px;
+        color: #888; }
+      #works li .description p {
+        font-size: 14px; }
 
 /*------------------- profile -----------------------*/
 #profile {
@@ -135,18 +79,15 @@ a {
 
 article {
   margin-bottom: 50px; }
-
-article h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #888; }
-
-article .year {
-  font-size: 14px;
-  color: #aaa; }
-
-article a {
-  text-decoration: underline; }
+  article h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #888; }
+  article .year {
+    font-size: 14px;
+    color: #aaa; }
+  article a {
+    text-decoration: underline; }
 
 ul {
   clear: both;
@@ -156,26 +97,80 @@ ul {
 /*------------------- footer -----------------------*/
 footer {
   margin: 30px 0; }
-
-footer p {
-  text-align: right;
-  margin-right: 20px; }
+  footer p {
+    text-align: right;
+    margin-right: 20px; }
 
 /*------------------- responsive -----------------------*/
 @media (max-width: 1080px) {
   #works li {
     width: 100%; }
-  #works li img {
-    float: none;
-    display: block;
-    width: 100%;
-    max-width: 614px;
-    margin: 0 auto; }
-  #works li .description {
-    clear: both;
-    float: none;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center; }
+    #works li img {
+      float: none;
+      display: block;
+      width: 100%;
+      max-width: 614px;
+      margin: 0 auto; }
+    #works li .description {
+      clear: both;
+      float: none;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center; }
   #profile {
     padding-left: 20px; } }
+
+#works {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10vh 0; }
+  #works li a {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #works li a .launcher {
+      font-size: 5vh;
+      font-weight: bold;
+      height: 10vh;
+      width: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      margin-bottom: 4px;
+      background: #fff;
+      position: fixed;
+      left: 0;
+      top: 0; }
+      #works li a .launcher#mind-sweeper {
+        transform: translate(100px, 100px); }
+        #works li a .launcher#mind-sweeper.opened {
+          transform: translate(0, 0);
+          font-size: 10rem;
+          width: 100vw;
+          height: 100vh; }
+      #works li a .launcher:hover {
+        background-color: #fafafa; }
+
+#iframe-wrapper {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  z-index: 1;
+  background-color: #fff; }
+  #iframe-wrapper.show {
+    display: block; }
+
+#close-iframe-btn {
+  position: fixed;
+  z-index: 3;
+  left: calc(50vw - 15px);
+  width: 30px;
+  height: 30px;
+  top: 10px; }
+
+.launcher {
+  transition: all 0.5s; }

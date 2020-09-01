@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body naver_screen_capture_injected="true">
-<div id="cover"></div>
 <header>
     <div class="wrapper">
         <ul>
@@ -19,41 +18,56 @@
     </div>
 </header>
 <section class="wrapper">
-    <ul id="works">
-        <li>
-            <a href="#mindsweeper">
-                <div
-                    id="mind-sweeper"
-                    class="launcher"
-                    data-item="mindsweeper"
-                    data-url="https://0131mj.github.io/games/MineSweeper/index.html">💣
-                </div>
-                Mind Sweeper
-            </a>
-        </li>
-        <li>
-            <a href="#baseball">
-                <div class="launcher"
-                     data-item="baseball"
-                     data-url="https://0131mj.github.io/baseball_game_ex/index.html">⚾</div>
-                Number Baseball
-            </a>
-        </li>
-    </ul>
+    <ul id="works"></ul>
 </section>
 <div id="iframe-wrapper" style="">
     <button id="close-iframe-btn">X</button>
     <iframe id="iframe" frameborder="0"></iframe>
 </div>
-<footer></footer>
 </body>
 <script>
-    setTimeout(
-        function () {
-            const cover = document.getElementById('cover');
-            cover.remove();
-        }, 2000
-    );
+    const works = document.getElementById("works");
+    const worksData = {
+        "mind-sweeper": {
+            icon: "💣",
+            text: "Mind Sweeper",
+            url: "https://0131mj.github.io/games/MineSweeper/index.html",
+        },
+        "baseball": {
+            icon: "⚾",
+            text: "Number Baseball",
+            url: "https://0131mj.github.io/baseball_game_ex/index.html",
+        }
+    };
+
+    works.innerHTML = Object.keys(worksData).reduce((list, appName) => {
+        const { icon, text, url } = worksData[appName];
+        return list += `
+            <li>
+                <a href="#${appName}" class="launcher-place-holder">
+                    <div
+                        id="${appName}"
+                        class="launcher"
+                        data-item="${appName}"
+                        data-url="${url}">${icon}
+                    </div>
+                </a>
+                <div>${text}</div>
+            </li>
+        `
+    },"");
+
+    const launcherPlaceHolders = document.querySelectorAll(".launcher-place-holder");
+    for(const place of launcherPlaceHolders ){
+        const { top, left, width, height} = place.getBoundingClientRect();
+        const launcher = place.querySelector(".launcher");
+        console.log(top, left, launcher);
+        launcher.style.transform = `translate(${left}px, ${top}px)`;
+        launcher.style.width = `${width}px`;
+        launcher.style.height = `${height}px`;
+
+    }
+    console.log(launcherPlaceHolders);
 
     const iframe = document.getElementById("iframe");
     const iframeWrapper = document.getElementById("iframe-wrapper");

@@ -1,4 +1,8 @@
 /*------------------- common -----------------------*/
+* {
+  box-sizing: border-box;
+}
+
 #cover {
   position: fixed;
   width: 100%;
@@ -164,39 +168,44 @@ footer {
   text-align: center;
   padding: 10vh 0;
   li {
-    a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .launcher-place-holder {
+      width: 100px;
+      height: 100px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      .launcher {
-        font-size: 5vh;
-        font-weight: bold;
-        height: 10vh;
-        width: 10vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        margin-bottom: 4px;
-        background: #fff;
-        position: fixed;
-        left: 0;
-        top: 0;
-        &#mind-sweeper{
-          transform: translate(100px, 100px);
-          &.opened {
-            transform: translate(0, 0);
-            font-size: 10rem;
-            width: 100vw;
-            height: 100vh;
-          }
-        }
-        &:hover {
-          background-color: #fafafa;
-        }
-      }
     }
+  }
+}
+
+.launcher {
+  font-size: 5vh;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  &#mind-sweeper {
+    z-index: 1;
+    //transform: translate(100px, 100px);
+    &.opened {
+      transform: translate(0, 0) !important;
+      font-size: 10rem;
+      width: 100vw !important;
+      height: 100vh !important;
+    }
+  }
+  &:hover {
+    background-color: #fafafa;
   }
 }
 

@@ -48,8 +48,9 @@
                     <div
                         id="${appName}"
                         class="launcher"
-                        data-item="${appName}"
-                        data-url="${url}">${icon}
+                        data-url="${url}"
+                        data-item="${appName}">
+                        ${icon}
                     </div>
                 </a>
                 <div>${text}</div>
@@ -93,6 +94,7 @@
         const itemId = location.hash.slice(1);
         if (itemId) {
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
+            target.classList.add("launched")
             target.classList.add("opened")
 //            const url = target.getAttribute("data-url");
 //            iframe.setAttribute("src", url);

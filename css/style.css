@@ -180,5 +180,5 @@ footer {
   height: 30px;
   top: 10px; }
 
-.launcher {
+.launcher.launched {
   transition: all 0.5s; }

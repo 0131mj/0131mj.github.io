@@ -231,6 +231,7 @@ footer {
 }
 
 .launcher {
-  transition: all 0.5s;
-
+  &.launched {
+    transition: all 0.5s;
+  }
 }

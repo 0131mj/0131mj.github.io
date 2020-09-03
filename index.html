@@ -50,7 +50,9 @@
                         class="launcher"
                         data-url="${url}"
                         data-item="${appName}">
-                        ${icon}
+                        <div class="launcher-icon">${icon}</div>
+                        <iframe src="${url}" frameborder="0"></iframe>
+                        <button class="close">x</button>
                     </div>
                 </a>
                 <div>${text}</div>
@@ -74,9 +76,10 @@
     const iframeWrapper = document.getElementById("iframe-wrapper");
     const closeIframeBtn = document.getElementById("close-iframe-btn");
 
+
     const hideIframe = () => {
-        iframeWrapper.classList.remove("show");
-        iframe.setAttribute("src", "");
+        const opened = document.querySelector(".opened");
+        opened.classList.remove("opened");
     };
 
 
@@ -85,17 +88,27 @@
         hideIframe();
     }
 
-    closeIframeBtn.addEventListener("click", () => {
-        removeHash();
-    });
+
+//    closeIframeBtn.addEventListener("click", () => {
+//        console.log("click")
+//        removeHash();
+//    });
+
+    const closeBtns = document.querySelectorAll(".close");
+    for (const closeBtn of closeBtns){
+        closeBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            removeHash();
+        });
+    }
 
 
     window.addEventListener('hashchange', function () {
         const itemId = location.hash.slice(1);
         if (itemId) {
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
-            target.classList.add("launched")
-            target.classList.add("opened")
+            target.classList.add("launched");
+            target.classList.add("opened");
 //            const url = target.getAttribute("data-url");
 //            iframe.setAttribute("src", url);
 //            iframe.setAttribute("width", `${window.innerWidth}px`);

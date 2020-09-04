@@ -60,15 +60,18 @@
         `
     },"");
 
-    const launcherPlaceHolders = document.querySelectorAll(".launcher-place-holder");
-    for(const place of launcherPlaceHolders ){
+    const setTransform = (place) => {
         const { top, left, width, height} = place.getBoundingClientRect();
         const launcher = place.querySelector(".launcher");
         console.log(top, left, launcher);
         launcher.style.transform = `translate(${left}px, ${top}px)`;
         launcher.style.width = `${width}px`;
         launcher.style.height = `${height}px`;
+    }
 
+    const launcherPlaceHolders = document.querySelectorAll(".launcher-place-holder");
+    for(const place of launcherPlaceHolders ){
+        setTransform(place);
     }
     console.log(launcherPlaceHolders);
 
@@ -79,7 +82,9 @@
 
     const hideIframe = () => {
         const opened = document.querySelector(".opened");
+        const parent = opened.parentNode;
         opened.classList.remove("opened");
+        setTransform(parent)
     };
 
 

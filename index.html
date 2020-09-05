@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body naver_screen_capture_injected="true">
+<body>
 <header>
     <div class="wrapper">
         <ul>
@@ -41,7 +41,7 @@
     };
 
     works.innerHTML = Object.keys(worksData).reduce((list, appName) => {
-        const { icon, text, url } = worksData[appName];
+        const {icon, text, url} = worksData[appName];
         return list += `
             <li>
                 <a href="#${appName}" class="launcher-place-holder">
@@ -58,19 +58,19 @@
                 <div>${text}</div>
             </li>
         `
-    },"");
+    }, "");
 
     const setTransform = (place) => {
-        const { top, left, width, height} = place.getBoundingClientRect();
+        const {top, left, width, height} = place.getBoundingClientRect();
         const launcher = place.querySelector(".launcher");
         console.log(top, left, launcher);
         launcher.style.transform = `translate(${left}px, ${top}px)`;
         launcher.style.width = `${width}px`;
         launcher.style.height = `${height}px`;
-    }
+    };
 
     const launcherPlaceHolders = document.querySelectorAll(".launcher-place-holder");
-    for(const place of launcherPlaceHolders ){
+    for (const place of launcherPlaceHolders) {
         setTransform(place);
     }
     console.log(launcherPlaceHolders);
@@ -94,19 +94,18 @@
     }
 
 
-//    closeIframeBtn.addEventListener("click", () => {
-//        console.log("click")
-//        removeHash();
-//    });
+    //    closeIframeBtn.addEventListener("click", () => {
+    //        console.log("click")
+    //        removeHash();
+    //    });
 
     const closeBtns = document.querySelectorAll(".close");
-    for (const closeBtn of closeBtns){
+    for (const closeBtn of closeBtns) {
         closeBtn.addEventListener("click", (e) => {
             e.preventDefault();
             removeHash();
         });
     }
-
 
     window.addEventListener('hashchange', function () {
         const itemId = location.hash.slice(1);
@@ -121,6 +120,13 @@
 //            iframeWrapper.classList.add("show")
         } else {
             hideIframe();
+        }
+    })
+
+    window.addEventListener("resize", () => {
+        const launcherPlaceHolders = document.querySelectorAll(".launcher-place-holder");
+        for (const place of launcherPlaceHolders) {
+            setTransform(place);
         }
     })
 </script>

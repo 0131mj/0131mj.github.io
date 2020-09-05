@@ -19,6 +19,7 @@
   }
   100% {
     opacity: 0;
+    z-index: -1;
   }
 }
 
@@ -212,6 +213,9 @@ footer {
     height: 100vh !important;
     .close {
       display: block;
+    }
+    .launcher-icon{
+      animation: fadeOut 0.5s forwards;
     }
   }
   &:hover {

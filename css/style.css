@@ -15,7 +15,8 @@
   0% {
     opacity: 1; }
   100% {
-    opacity: 0; } }
+    opacity: 0;
+    z-index: -1; } }
 
 .wrapper {
   margin: 0 auto;
@@ -169,6 +170,8 @@ footer {
     height: 100vh !important; }
     .launcher.opened .close {
       display: block; }
+    .launcher.opened .launcher-icon {
+      animation: fadeOut 0.5s forwards; }
   .launcher:hover {
     background-color: #fafafa; }
   .launcher .launcher-icon {

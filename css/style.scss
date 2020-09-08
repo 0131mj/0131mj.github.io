@@ -3,16 +3,6 @@
   box-sizing: border-box;
 }
 
-#cover {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  z-index: 10000;
-  animation: fadeOut 2s;
-  animation-delay: 0.3s;
-}
-
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -36,45 +26,43 @@ section {
   padding: 80px 30px 0px;
 }
 
-/*------------------- header -----------------------*/
+/*------------------- portfolio -----------------------*/
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 240px 0;
+}
+
 header {
-  width: 100%;
-  position: fixed;
-  height: 20px;
-  line-height: 20px;
-  padding: 30px 0px;
-  background: rgba(255, 255, 255, 0.9);
-  ul {
-    float: right;
-    li {
-      float: left;
-      margin-right: 20px;
-      &.on {
-        a {
-          color: #000;
-        }
-      }
-      a {
-        color: #888;
-      }
+  text-align: center;
+  h2 {
+    font-size: 1.4rem;
+    letter-spacing: 0.5rem;
+
+  }
+  nav {
+    margin-top: 1.2rem;
+    color: #888;
+    a{
+      margin: 0 1.5rem;
     }
   }
 }
 
-/*------------------- portfolio -----------------------*/
-
 a {
   text-decoration: none;
-  color: #000;
+  color: inherit;
 }
 
 #works {
+  flex-grow: 1;
   overflow: hidden;
   text-align: left;
+  display: flex;
+  justify-content: center;
   li {
-    float: left;
-    width: 100%;
-    margin-bottom: 50px;
+    margin: 50px;
     letter-spacing: -1px;
     img {
       float: left;
@@ -103,7 +91,7 @@ a {
 #profile {
   padding-top: 150px;
   padding-left: 30%;
-  li{
+  li {
     line-height: 20px;
   }
 }
@@ -181,6 +169,7 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-bottom: 0.5rem;
     }
   }
 }
@@ -217,7 +206,7 @@ footer {
     .close {
       display: block;
     }
-    .launcher-icon{
+    .launcher-icon {
       animation: fadeOut 0.5s forwards;
     }
   }
@@ -231,7 +220,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: powderblue;
+    background: #fafafa;
+    &:hover {
+      background-color: #f5f5f5;
+    }
   }
   iframe {
     width: 100%;

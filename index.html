@@ -45,8 +45,11 @@
                         data-url="${url}"
                         data-item="${appName}">
                         <div class="launcher-icon">${icon}</div>
+                        <div class="launcher-control-bar">
+                            ${text}
+                            <button class="close-btn">x</button>
+                        </div>
                         <iframe src="${url}" frameborder="0"></iframe>
-                        <button class="close">x</button>
                     </div>
                 </a>
                 <div>${text}</div>
@@ -69,11 +72,6 @@
     }
     console.log(launcherPlaceHolders);
 
-    const iframe = document.getElementById("iframe");
-    const iframeWrapper = document.getElementById("iframe-wrapper");
-    const closeIframeBtn = document.getElementById("close-iframe-btn");
-
-
     const hideIframe = () => {
         const opened = document.querySelector(".opened");
         const parent = opened.parentNode;
@@ -93,7 +91,7 @@
     //        removeHash();
     //    });
 
-    const closeBtns = document.querySelectorAll(".close");
+    const closeBtns = document.querySelectorAll(".close-btn");
     for (const closeBtn of closeBtns) {
         closeBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -108,10 +106,6 @@
             target.classList.add("launched");
             target.classList.add("opened");
 //            const url = target.getAttribute("data-url");
-//            iframe.setAttribute("src", url);
-//            iframe.setAttribute("width", `${window.innerWidth}px`);
-//            iframe.setAttribute("height", `${window.innerHeight - 100}px`);
-//            iframeWrapper.classList.add("show")
         } else {
             hideIframe();
         }

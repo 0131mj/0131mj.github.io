@@ -141,31 +141,54 @@ footer {
   justify-content: center;
   align-items: center;
   border: 1px solid #eee;
-  border-radius: 8px;
+  border-radius: 24px;
   margin-bottom: 4px;
   background: #fff;
   position: fixed;
+  overflow: hidden;
   left: 0;
-  top: 0; }
-  .launcher .close {
-    display: none;
-    z-index: 1;
-    right: 50px;
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 20px; }
+  top: 0;
+  flex-direction: column; }
+  .launcher .launcher-control-bar {
+    display: none; }
   .launcher.opened {
+    border: none;
     z-index: 1;
     transform: translate(0, 0) !important;
     font-size: 10rem;
     width: 100vw !important;
-    height: 100vh !important; }
-    .launcher.opened .close {
-      display: block; }
+    height: 100vh !important;
+    border-radius: 0; }
     .launcher.opened .launcher-icon {
       animation: fadeOut 0.5s forwards; }
+    .launcher.opened .launcher-control-bar {
+      letter-spacing: 0;
+      height: 50px;
+      width: 100%;
+      background-color: #444;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: #fff;
+      font-weight: normal;
+      font-size: 16px; }
+      .launcher.opened .launcher-control-bar .close-btn {
+        background-color: transparent;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 22px;
+        border: 1px solid #fff;
+        outline-width: 0;
+        cursor: pointer;
+        opacity: 0.8;
+        color: #fff; }
+        .launcher.opened .launcher-control-bar .close-btn:hover {
+          opacity: 1; }
+    .launcher.opened iframe {
+      display: block; }
   .launcher:hover {
     background-color: #fafafa; }
   .launcher .launcher-icon {
@@ -180,7 +203,8 @@ footer {
       background-color: #f5f5f5; }
   .launcher iframe {
     width: 100%;
-    height: 100%; }
+    flex-grow: 1;
+    display: none; }
 
 #iframe-wrapper {
   display: none;
@@ -191,14 +215,6 @@ footer {
   background-color: #fff; }
   #iframe-wrapper.show {
     display: block; }
-
-#close-iframe-btn {
-  position: fixed;
-  z-index: 3;
-  left: calc(50vw - 15px);
-  width: 30px;
-  height: 30px;
-  top: 10px; }
 
 .launcher.launched {
   transition: all 0.5s; }

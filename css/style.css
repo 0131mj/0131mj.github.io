@@ -176,15 +176,15 @@ footer {
       .launcher.opened .launcher-control-bar .close-btn {
         background-color: transparent;
         z-index: 1;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
+        border: none;
         font-size: 22px;
-        border: 1px solid #fff;
         outline-width: 0;
         cursor: pointer;
         opacity: 0.8;
-        color: #fff; }
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
         .launcher.opened .launcher-control-bar .close-btn:hover {
           opacity: 1; }
     .launcher.opened iframe {

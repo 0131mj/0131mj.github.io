@@ -85,12 +85,6 @@
         hideIframe();
     }
 
-
-    //    closeIframeBtn.addEventListener("click", () => {
-    //        console.log("click")
-    //        removeHash();
-    //    });
-
     const closeBtns = document.querySelectorAll(".close-btn");
     for (const closeBtn of closeBtns) {
         closeBtn.addEventListener("click", (e) => {
@@ -105,7 +99,6 @@
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
             target.classList.add("launched");
             target.classList.add("opened");
-//            const url = target.getAttribute("data-url");
         } else {
             hideIframe();
         }

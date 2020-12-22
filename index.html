@@ -22,16 +22,22 @@
 <script>
     const works = document.getElementById("works");
     const worksData = {
+        "tetris": {
+            icon: "🧱",
+            text: "Tetris",
+            url: "https://0131mj.github.io/tetris/",
+        },
         "mind-sweeper": {
             icon: "💣",
             text: "Mind Sweeper",
             url: "https://0131mj.github.io/games/MineSweeper/index.html",
         },
+
         "baseball": {
             icon: "⚾",
             text: "Number Baseball",
             url: "https://0131mj.github.io/baseball_game_ex/index.html",
-        }
+        },
     };
 
     works.innerHTML = Object.keys(worksData).reduce((list, appName) => {

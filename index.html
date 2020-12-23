@@ -89,7 +89,7 @@
         opened.classList.remove("opened");
         setTransform(parent);
         const iFrame = opened.querySelector("iframe");
-        iFrame.setAttribute("src", "https://0131mj.github.io/tetris/");
+        iFrame.setAttribute("src", "");
     };
 
 
@@ -111,9 +111,11 @@
         if (itemId) {
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
             const iFrame = target.querySelector("iframe");
-            iFrame.setAttribute("src", target.dataset.url);
             target.classList.add("launched");
             target.classList.add("opened");
+            setTimeout(()=>{
+                iFrame.setAttribute("src", target.dataset.url);
+            }, 300)
         } else {
             hideIframe();
         }

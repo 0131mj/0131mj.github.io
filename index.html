@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+<style>
+  .launcher{
+    will-change: transform, width, height;
+  }
+</style>
 <body>
 <header>
     <h2>bae myoung jin</h2>
@@ -82,7 +87,9 @@
         const opened = document.querySelector(".opened");
         const parent = opened.parentNode;
         opened.classList.remove("opened");
-        setTransform(parent)
+        setTransform(parent);
+        const iFrame = opened.querySelector("iframe");
+        iFrame.setAttribute("src", "https://0131mj.github.io/tetris/");
     };
 
 
@@ -103,6 +110,8 @@
         const itemId = location.hash.slice(1);
         if (itemId) {
             const target = document.querySelectorAll(`[data-item=${itemId}]`)[0];
+            const iFrame = target.querySelector("iframe");
+            iFrame.setAttribute("src", target.dataset.url);
             target.classList.add("launched");
             target.classList.add("opened");
         } else {

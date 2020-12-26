@@ -115,6 +115,9 @@
             target.classList.add("opened");
             setTimeout(()=>{
                 iFrame.setAttribute("src", target.dataset.url);
+                setTimeout(()=>{
+                  iFrame.contentWindow.focus();
+                },300)
             }, 300)
         } else {
             hideIframe();

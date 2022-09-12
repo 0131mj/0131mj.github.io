@@ -9,9 +9,75 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <style>
-  .launcher{
-    will-change: transform, width, height;
-  }
+    .hide {
+        display: none !important;
+    }
+
+    #profile-modal-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #profile-modal {
+        background: #fff;
+        padding: 2vw 1vw;
+        border-radius: .5vw;
+        letter-spacing: -1px;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #profile-modal > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1vw 1vw;
+    }
+
+    #profile-modal > header {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    #profile-modal > header > button {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 1.5rem;
+    }
+
+    #profile-modal-content {
+        overflow: hidden scroll;
+        flex-grow: 1;
+        padding: 1vw;
+    }
+
+    #profile-modal h3 {
+        font-size: 2rem;
+        line-height: 5rem;
+    }
+
+    #profile-modal dt {
+        font-size: 1.2rem;
+        color: #aaa;
+        line-height: 2rem;
+    }
+
+    #profile-modal dd {
+        line-height: 2rem;
+    }
+
+    .launcher {
+        will-change: transform, width, height;
+    }
 </style>
 <body>
 <header>
@@ -19,10 +85,18 @@
     <nav>
         <a href="https://github.com/0131mj" target="_blank">github</a>
         <a href="https://dribbble.com/mjbae" target="_blank">dribbble</a>
-        <a href="">about</a>
+        <a href="" id="profile-btn">about</a>
     </nav>
 </header>
 <ul id="works"></ul>
+<div id="profile-modal-wrapper" class="hide">
+    <div id="profile-modal">
+        <header>
+            About
+            <button id="close-profile-modal-btn">x</button>
+        </header>
+    </div>
+</div>
 </body>
 <script>
     const works = document.getElementById("works");
@@ -113,11 +187,11 @@
             const iFrame = target.querySelector("iframe");
             target.classList.add("launched");
             target.classList.add("opened");
-            setTimeout(()=>{
+            setTimeout(() => {
                 iFrame.setAttribute("src", target.dataset.url);
-                setTimeout(()=>{
-                  iFrame.contentWindow.focus();
-                },300)
+                setTimeout(() => {
+                    iFrame.contentWindow.focus();
+                }, 300)
             }, 300)
         } else {
             hideIframe();
@@ -129,6 +203,151 @@
         for (const place of launcherPlaceHolders) {
             setTransform(place);
         }
+    })
+
+
+    const aboutData = {
+        skills: [
+            {
+                area: "Front-End",
+                skill: [
+                    'HTML5',
+                    'CSS3 (SCSS)',
+                    'JavaScript (Vanilla, ReactJS, NodeJS)',
+                    'PHP (Native PHP, Codeigniter)',
+                    'SQL (MySQL)'
+                ]
+            },
+            {
+                area: "Web / App Design ",
+                skill: [
+                    'Figma',
+                    'Sketch',
+                    'Illustrator',
+                    'Photoshop'
+                ]
+            },
+            {
+                area: "etc",
+                skill: [
+                    'AutoCAD',
+                    'OA (Excel, PowerPoint, 한글)',
+                    '3D graphics (Rhinoceros & KeyShot)'
+                ]
+            }
+        ],
+        careers: [
+            {
+                year: '2018. 6. ~ 2021. 9',
+                career: [
+                    '(주)비엔솔루션 Front-End Developer',
+                    '커뮤니케이션 플랫폼 위키토리 및 그룹웨어 큐브 개발'
+                ]
+            },
+            {
+                year: '2017. 2. ~ 2018. 5',
+                career: [
+                    '(주)렌고 개발팀 Front-End Developer',
+                    '렌터카 예약 중개 플랫폼 사이트 개발 및 유지보수'
+                ]
+            },
+            {
+                year: '2016. 5. ~ 2017. 2.',
+                career: [
+                    '(주)캠버스 개발팀 주임',
+                    '캠버스 및 패밀리 사이트(고시마트, 단골도서) 개발'
+                ]
+            },
+            {
+                year: '2015. 7. ~ 2016. 4.',
+                career: [
+                    '쿠키(coukey.co.kr)기획팀 팀장',
+                    '사이트 유지보수, 배너 디자인, 신규 플랫폼 기획'
+                ]
+            },
+            {
+                year: '2015. 3. ~ 2015. 6.',
+                career: [
+                    '(주)에버스톤 개발팀 인턴',
+                    '각종 기업 웹사이트 디자인 및 개발'
+                ]
+            }
+        ],
+        projects: [
+            {
+                year: '2017',
+                project: [
+                    '렌터카 예약 중개 플랫폼 : (주)렌고 PC 개발, Mobile App 기획 디자인',
+                    '토목공사 전문업체 : 삼보토건(주) 웹사이트 개발',
+                    '건축자재 전문업체 : 육일목재/미가건축 기업소개 및 카탈로그 웹사이트 디자인 및 개발']
+            },
+            {
+                year: '2016',
+                project: [
+                    '교육컨텐츠 쇼핑몰 : 뉴고시마트 배송관리 프로그램 기획, 개발',
+                    '교육컨텐츠 쇼핑몰 : 고시마트(Admin/User) PC, Mobile 개발',
+                    '도서판매 쇼핑몰 : 단골도서(Admin/User) PC, Mobile 개발',
+                    '(주)캠버스 : 도서매입 프로그램 개발',
+                    '(주)캠버스 패밀리사이트 : 전태련, 정샘, 캠버스학원 등 유지보수']
+            },
+            {
+                year: '2015',
+                project: [
+                    'IT전문기업 : (주)에버스톤 기업 웹사이트 기획, 디자인 및 개발',
+                    '태아보험 이벤트 광고페이지 개발',
+                    '영상제작 전문업체 : 원미디어 기업 웹사이트 개발',
+                    '생명공학 전문업체 : 한국DNA밸리 기업 웹사이트) 개발',]
+            }
+        ]
+    }
+
+    const profileModalWrapper = document.getElementById("profile-modal-wrapper");
+    const profileModal = document.getElementById("profile-modal");
+    const showProfileModal = () => {
+        profileModalWrapper.classList.remove("hide");
+    }
+
+    const hideProfileModal = () => {
+        profileModalWrapper.classList.add("hide");
+    }
+
+    const profileBtn = document.getElementById("profile-btn")
+    profileBtn.addEventListener("click",(e)=>{
+        e.preventDefault();
+        showProfileModal();
+    })
+
+    const profileModalContent = document.createElement("div");
+    profileModalContent.setAttribute("id", "profile-modal-content");
+    Object.entries(aboutData).reduce((acc, [title, details]) => {
+        const titleEl = document.createElement("h3");
+        titleEl.innerText = title;
+        acc.append(titleEl);
+        const contentEl = document.createElement("dl");
+        details.forEach((detail) => {
+            const [dt, dd] = Object.values(detail);
+            const dtEl = document.createElement("dt");
+            dtEl.textContent = `${dt}`;
+
+            const ddEl = document.createElement("dd");
+            const ulEl = document.createElement("ul");
+            dd.forEach((li) => {
+                const liEl = document.createElement("li");
+                liEl.textContent = `${li}`;
+                ulEl.appendChild(liEl);
+            })
+
+            ddEl.appendChild(ulEl);
+            contentEl.appendChild(dtEl);
+            contentEl.appendChild(ddEl);
+        })
+        acc.appendChild(contentEl);
+        return acc;
+    }, profileModalContent);
+    profileModal.appendChild(profileModalContent);
+
+    document.getElementById("close-profile-modal-btn").addEventListener("click", () => {
+        hideProfileModal();
     })
 </script>
 </html>
